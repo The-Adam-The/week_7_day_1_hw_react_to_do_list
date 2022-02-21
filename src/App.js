@@ -1,10 +1,34 @@
 import './App.css';
-
+import React, {useState} from 'react';
 function App() {
+  // create array for task list
+  const [tasks, setTasks] = useState([
+    {name: "Walk Dog", isComplete: false},
+    {name: "Feed Cat", isComplete: true},
+    {name: "Clean out fridge", isComplete: false}
+  ])
+
+  //display tasks on webpage
+  const taskNodes = tasks.map( (task, index) => {
+    return (
+    <li key={index}>
+    <span>{task.name}</span>
+    </li>
+    );
+  });
+
+
   return (
-   <>
-   <h1>Hello World</h1>
-   </>
+   <div>
+   <h1>Todo</h1>
+  <form action="saveNewItem">
+    <input type="text" id="new-item" />
+    <input type="submit" value="Add" />
+  </form>
+    <ul>
+      {taskNodes}
+    </ul>
+   </div>
   );
 }
 

@@ -11,12 +11,20 @@ function App() {
 
   //Create new tasks
   const [newTask, setNewTask] = useState("");
-  
+
+  const completeTask = (index) => {
+    tasks[index].isComplete = true;
+    const copyOfTasks = [...tasks];
+    setTasks(copyOfTasks);
+
+  }
+
   //display tasks on webpage
   const taskNodes = tasks.map( (task, index) => {
     return (
     <li key={index}>
     <span>{task.name}</span>
+    {task.isComplete ? <span>Completed</span> : <button onClick={() =>completeTask(index) }>Mark Completed</button>}
     </li>
     );
   });
@@ -38,7 +46,7 @@ function App() {
    <h1>Todo</h1>
   <form onSubmit={saveNewTask}>
     <input type="text" id="new-item" value={newTask} onChange={handleTaskInput}/>
-    <input type="submit" value="Add" />
+    <input type="submit" value="Add"/>
   </form>
     <ul>
       {taskNodes}

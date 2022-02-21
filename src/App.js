@@ -39,7 +39,7 @@ function App() {
     const newAddedTask = {name: newTask, priority: event.target.priority.value, isComplete: false};
     const copyOfTasks = [...tasks, newAddedTask];
     setTasks(copyOfTasks);
-    setNewTask("")
+    setNewTask("");
   };
 
   return (
@@ -47,14 +47,11 @@ function App() {
     <h1>To Do List</h1>
     <form onSubmit={saveNewTask}>
       <input type="text" id="new-item" value={newTask} onChange={handleTaskInput}/>
-
       <input type="submit" value="Add"/>
-
       <div className="radio-box">
         <p>Priority level: </p>
         <label id="low-label" htmlFor="low">low</label>
         <input type ="radio" id="low" value="low"  name="priority"/>
-
         <label id = "high-label" htmlFor="high">high</label>
         <input type ="radio" id="high" value="high" name="priority"/>
       </div>
@@ -64,6 +61,6 @@ function App() {
     </ul>
   </div>
   );
-}
+};
 
 export default App;

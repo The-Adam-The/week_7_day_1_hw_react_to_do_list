@@ -86,11 +86,10 @@ button, input[type="submit"]{
 .low-button {
   background-color: dodgerblue;
 }
+
 .high-button {
   background-color: #f26507; 
   }
-
-
 
 #high-label {
   color: #f26507;

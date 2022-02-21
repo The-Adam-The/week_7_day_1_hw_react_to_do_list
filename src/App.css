@@ -1,38 +1,104 @@
+
+body {
+  padding: 20px;
+}
+
+h1 {
+  margin-left: 5px;
+}
+
 .App {
-  text-align: center;
+  
+  margin: 0 auto;
+  font-family: 'Lato', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 55%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+li {
+  margin: 20px 0;
+  padding: 10px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+li span {
+  padding: 8px;
+  min-width: 100px;
+  max-width: 200px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+li button {
+  background: #f2360c;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+li.low-priority {
+  border: 2px solid dodgerblue;
+  color: dodgerblue;
+}
+
+li.high-priority {
+  border: 2px solid #f26507;
+}
+
+li.high-priority>span {
+  color: #f26507;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 50%;
+  margin:5px;
+}
+
+button, input[type="submit"]{
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+.radio-box {
+  width: 51%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.radio-box > p {
+  margin: 0 5px 0 0;
+}
+
+#low-label {
+  color: dodgerblue;
+}
+
+.low-button {
+  background-color: dodgerblue;
+}
+.high-button {
+  background-color: #f26507; 
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+
+#high-label {
+  color: #f26507;
+}
+
+#completed-message {
+  color: #1a681e;
+  font-weight: 500;
+  text-align: center;
+  font-size: 1.1em;
 }
